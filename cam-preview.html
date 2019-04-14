@@ -1,0 +1,104 @@
+<video id="video" width="320" height="240" autoplay></video>
+<button id="snap" class="btn btn-info kirim"><i class="fas fa-camera"></i></button>
+<canvas id="canvas" width="320" height="240" hidden=" "></canvas>
+<video id="vid" autoplay="true" width="320" height="240"></video>
+
+<script type="text/javascript">
+// Grab elements, create settings, etc.
+var video = document.getElementById('video');
+
+// Get access to the camera!
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        //video.src = window.URL.createObjectURL(stream);
+        video.srcObject = stream;
+        video.play();
+    });
+}
+
+/* Legacy code below: getUserMedia 
+else if(navigator.getUserMedia) { // Standard
+    navigator.getUserMedia({ video: true }, function(stream) {
+        video.src = stream;
+        video.play();
+    }, errBack);
+} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+    navigator.webkitGetUserMedia({ video: true }, function(stream){
+        video.src = window.webkitURL.createObjectURL(stream);
+        video.play();
+    }, errBack);
+} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
+    navigator.mozGetUserMedia({ video: true }, function(stream){
+        video.srcObject = stream;
+        video.play();
+    }, errBack);
+}
+*/
+
+// Elements for taking the snapshot
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var video = document.getElementById('video');
+
+// Trigger photo take
+document.getElementById("snap").addEventListener("click", function() {
+	context.drawImage(video, 0, 0, 640, 480);
+});
+
+///sekat
+
+const vid = document.querySelector('video');
+navigator.mediaDevices.getUserMedia({video: true}) // request cam
+.then(stream => {
+  vid.srcObject = stream; // don't use createObjectURL(MediaStream)
+  return vid.play(); // returns a Promise
+})
+.then(()=>{ // enable the button
+  const btn = document.querySelector('button');
+  btn.disabled = false;
+  btn.onclick = e => {
+    takeASnap()
+    .then(download);
+  };
+})
+.catch(e=>console.log('please use the fiddle instead'));
+
+// var date = new Date();
+// var timestamp = date.getTime();
+
+console.log(dateString);
+
+function takeASnap(){
+  const canvas = document.createElement('canvas'); // create a canvas
+  const ctx = canvas.getContext('2d'); // get its context
+  canvas.width = vid.videoWidth; // set its size to the one of the video
+  canvas.height = vid.videoHeight;
+  ctx.drawImage(vid, 0,0); // the video
+  return new Promise((res, rej)=>{
+    canvas.toBlob(res, 'image/jpeg'); // request a Blob from the canvas
+  });
+}
+function download(blob){
+
+// var currentDate = new Date();
+// //var time = new ();
+
+// var date = currentDate.getDate();
+// var month = currentDate.getMonth(); //Be careful! January is 0 not 1
+// var year = currentDate.getFullYear();
+
+// var dateString = date + "-" +(month + 1) + "-" + year;
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + "." + today.getMinutes() + "." + today.getSeconds();
+var dateTime = date+' '+time;
+
+  // uses the <a download> to download a Blob
+  let a = document.createElement('a'); 
+  a.href = URL.createObjectURL(blob);
+  a.download = 'img'+dateTime+'.jpg';
+  document.body.appendChild(a);
+  a.click();
+}
+</script>
