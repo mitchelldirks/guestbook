@@ -1,0 +1,254 @@
+.section {
+	position: relative;
+	height: 100vh;
+}
+
+body{
+	background: #a9e7f4;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#Isian {
+	font-family: 'Raleway', sans-serif;
+}
+
+.Isian-form {
+	position: relative;
+	max-width: 1000px;
+	/*padding-top: 250px;*/
+	padding-bottom: 50px;
+	width: 100%;
+	margin: auto;
+	background: #4e5056;
+	/*	 cursor: pointer;*/
+}
+
+.Isian-form>.Isian-bg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 320px;
+	/*background-image: url('../img/sdppi.jpg');*/
+	background-size: cover;
+	background-position: center;
+}
+
+.Isian-form>form {
+	margin-left: 310px;
+	padding: 30px;
+}
+
+.Isian-form .judul {
+	margin-bottom: 25px;
+}
+
+.Isian-form .judul h2 {
+	margin: 0;
+	font-weight: 400;
+	color: #fff;
+	font-size: 42px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.Isian-form .form-kelompokan {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.Isian-form .form-control {
+	background-color: transparent;
+	height: 65px;
+	padding: 0px;
+	padding-top: 15px;
+	border-radius: 0px;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	color: #fff;
+	border: 0px;
+	font-size: 16px;
+	font-weight: 700;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-transform: capitalize;
+	border-bottom: 2px solid #cecccd;
+}
+
+.Isian-form .form-control::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.Isian-form .form-control:-ms-input-placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.Isian-form .form-control::placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.Isian-form input[type="date"].form-control:invalid,
+.Isian-form input[type="time"].form-control:invalid {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.Isian-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.Isian-form select.form-control option {
+	color: #1a1b1d;
+}
+
+.Isian-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 4px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+}
+
+.Isian-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	color: #cecccd;
+	font-size: 14px;
+}
+
+.Isian-form select.form-control~.form-label {
+	opacity: 1;
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.Isian-form .form-label {
+	color: #02aed1;
+	font-weight: 700;
+	line-height: 24px;
+	height: 24px;
+	font-size: 14px;
+	position: absolute;
+	left: 0;
+	top: 26px;
+	opacity: 0;
+	text-transform: capitalize;
+	pointer-events: none;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+}
+
+.Isian-form .form-kelompokan:not(.input-not-empty) .form-control:not(:focus) {
+	color: transparent;
+}
+
+.Isian-form input[type="time"].form-control+.form-label {
+	color: rgba(255, 255, 255, 0.3);
+	opacity: 1;
+}
+
+.Isian-form input[type="time"].form-control:focus+.form-label {
+	opacity: 1;
+	top: 0px;
+	color: #02aed1 !important;
+}
+
+.Isian-form .form-kelompokan.input-not-empty .form-label {
+	opacity: 1;
+	top: 0px;
+	color: #02aed1 !important;
+}
+/*select{
+	color: white;
+	background: transparent;
+}*/
+
+.Isian-form .form-btn {
+	margin-top: 25px;
+}
+
+.Isian-form .submit-btn {
+	color: #fff;
+	background-color: transparent;
+	font-weight: 700;
+	height: 55px;
+	padding: 10px 35px;
+	font-size: 18px;
+	border-radius: 0px;
+	width: 100%;
+	border: 2px solid #fff;
+}
+.Isian-form .submit-btn:hover{
+	color: #02aed1;
+	background-color: #4e5056;
+	font-weight: 700;
+	height: 55px;
+	padding: 10px 35px;
+	font-size: 18px;
+	border-radius: 0px;
+	width: 100%;
+	border: 2px solid #02aed1;
+}
+
+/*
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tombolupload input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}*/
+
+
+input[type='file'] {
+  display: none;
+ opacity: 0;
+  position: absolute;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+/*
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}*/
+
+@media only screen and (max-width: 480px) {
+	.Isian-form>.Isian-bg {
+		display: none;
+	}
+	.Isian-form>form {
+		margin-left: 0px;
+	}
+}

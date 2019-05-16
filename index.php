@@ -1,211 +1,116 @@
+<!DOCTYPE html>
 <html>
-<head> 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<style>
-	
-	body {
-		background-image: url('bg.jpg') ;
-			background-attachment: fixed;
-			background-size:  cover;
-	}
-	td {
-		font-family:arial;
-		font-size:14px;
-	}
-	input,select,textarea {
-		font-family:arial;
-        font-size:14px;
-		padding:2px;
-		border-radius: 10px;
-	}
-	.wajibisi { 
-		color:red;
-	}
 
-	.kirim {
-		font-family:arial;
-        font-size:14px;
-		color:#fff;
-		background:grey;
-		padding-left:20px;
-		padding-right:20px;
-		padding-top:10px;
-		padding-bottom:10px;
-		border:0px;
-	}
-	
-	.sukses {
-		font-family:arial;
-                font-size:12px;
-                font-weight:bold;
-		color:red
-
-	}
-	.error {
-		font-family:arial;
-                font-size:12px;
-                color:red;
-		font-weight:bold;
-		color:red;	
-	}
-
-	.tabelnya {
-		background:#fff;
-		padding:10px;
-		border-radius:10px;
-	}
-	</style>
-	</head>
-
-	<body>
-	<!-- <div style="width:100%; height:10px; background:blue;">&nbsp;</div> -->
-	<table align="center">
-		
-		<tr>
-			<td width="20%"><a href=""><img src="" width=90 border=0 alt="index"></a></td>
-			<td><h3>BUKU TAMU KUNJUNGAN</h3>
-				<h2 style="margin-top:-17px">DATA CENTER</h2>
-				<p style="margin-top:-17px">Telp:()  | Email:@ </p>
-				</td>
-		</tr>
-	</table>
-
-		<div class="row fluid">
-			<div class="box">
-		<form method="POST" action="index.php">
-			<table class="tabelnya" style="width: 500px;" align="center" cellpadding=2 cellspacing=2>
-				<tbody>
-					
-					 <tr>
-                    	<td colspan=2 style="background:grey; color:#fff; padding:6px; border-radius:6px; font-weight:bold;">Silahkan lengkapi form buku tamu berikut :</td>
-			                </tr>
-					 	<tr><td colspan=2 height=3></td></tr>
+<head>
+  <meta charset="UTF-8">
+  <title> Registrasi Kegiatan SDPPI</title>
+  
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='css/font-awesome.min.css'>
 
 
-					<tr>
-						<td style="width: 162px;">&nbsp;Tanggal <span class="wajibisi">*</span></td>
-						<td style="width: 303px;">&nbsp;<input type=text id="datepicker"  name=tanggal value="<?php echo date('Y-m-d')?>" readonly></td>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-					</tr>
-					<tr>
-						<td style="width: 162px;">&nbsp;Jam <span class="wajibisi">*</span></td>
-						<td style="width: 303px;">&nbsp;<input  type="text" name="jam" value="<?php $H=date('H'); $jam=$H+7; echo '$jam : date(i)';?>" size=7> <small><i>misal pukul 09:00 atau 21:00</i></td>
-					</tr>
-					<tr>
-                            <td style="width: 162px;">&nbsp;Nama<span class="wajibisi">*</span></td>
-            <td style="width: 303px;">&nbsp;<input type=text name=nama size=20 value=""></td>
-                                        </tr>
-				<tr>
-					<td style="width: 162px;">&nbsp;Jabatan<span class="wajibisi">*</span></td>
-					<td style="width: 303px;">&nbsp;<input type=text name=jabatan size=20 value=""></td>
+<body>
+<div class="container">
+  <form method="POST" action="saving.php">  
+    <center>
+    <h2>Registrasi Kegiatan SDPPI</h2>
+  </center>
+    <div class="row">
+        <h4>Tanggal Daftar</h4>
+        <div class="input-group">
+           <div class="col-half">
+            <input type="text" placeholder="Day" value="<?php echo date('l');?>" readonly/>
+          </div>
+          <div class="col-half">
+          <div class="col-third">
+            <input type="text" placeholder="DD" value="<?php echo date('d')?>" readonly/>
+          </div>
+          <div class="col-third">
+            <input type="text" placeholder="MM" value="<?php echo date('M')?>" readonly/>
+          </div>
+          <div class="col-third">
+            <input type="text" placeholder="YYYY"value="<?php echo date('Y')?>" readonly/>
+          </div>
+        </div>
+      </div>
+      
+        <h4>Tema Kegiatan </h4>
+        <div class="input-group">
+          <!-- <div class="infokeg"> -->
+        <input type="radio" name="kegiatan" value="A" id="KegiatanA" checked="true"/>
+          <label for="KegiatanA" data-tooltip="Rabu 8 Mei 2019 15:00 WIB Ruang C Gedung Z">Kegiatan A</label> 
 
-				</tr>
-					<tr>
-						<td style="width: 162px;">&nbsp; Divisi</td>
-						<td>&nbsp;<select name=rack>
-							<option value="0">Pilih</option>
-							<option value="timur">Divisi Timur</option>	
- 							<option value="barat">Divisi Barat </option>
- 							<option value="selatan">Divisi Selatan</option>
- 							<option value="utara">Divisi Utara</option>
-						</select>
-						</td>
-						
-					<tr>
-				
-					<tr>
-          				<td style="width: 162px;">&nbsp;Email <span class="wajibisi">*</span></td>
-            			<td style="width: 303px;">&nbsp;<input type=text name=email size=20 value=""></td>
-                  	</tr>	
-					<tr>
-						<td style="width: 162px;">&nbsp;Telepon / HP <span class="wajibisi">*</span></td>
-						<td style="width: 303px;">&nbsp;<input type=text name=telepon value=""></td>
-					</tr>
-					<tr>
-						<td style="width: 162px;">&nbsp; Sesi</td>
-						<td>&nbsp;<select name=rack>
-							<option value="pilih">Pilih</option>
-							<option value="sesi1">ke 1</option>	
- 							<option value="sesi2">ke 2</option>
- 							<option value="sesi3">ke 3</option>
-						</select>
-						</td>
-					<tr>
-					<tr>
-						<td style="width: 162px; height: 97px;">&nbsp;Agenda / Kegiatan</td>
-						<td style="width: 303px; height: 97px;">
-						<textarea style="margin-left:3px" cols="40" rows="8" name=agenda></textarea></td>
-					</tr>
+          <input type="radio" name="kegiatan" value="B" id="KegiatanB"/>
+          <label for="KegiatanB" data-tooltip="Rabu 8 Mei 2019 15:00 WIB Ruang C Gedung Z">Kegiatan B</label>
 
-					<tr> 
-						
-					</tr>
-					<tr>
-					<td><div class="g-recaptcha" data-sitekey="6LdRyyUUAAAAAJ9ZzHTM_fstuiilRHpHllLaOLwf"></div></td>
-					</tr>
-					<tr>
-					<td colspan=2 align=center><small>Kolom dengan tanda <span class=wajibisi>*</span> wajib untuk diisi</small></td>
-					<!--<td colspan=2 align=center></td>-->
-					
-					</tr>
-					<tr>
-						<td style="width: 162px;">&nbsp;</td>
-						<td style="width: 303px;">&nbsp;
-							<input name=kirim id="snap" class="btn btn-info kirim" type="submit" value="KIRIM"> 
-							<input name=kirim class="btn btn-info kirim" type="reset" value="CLEAR">
-						</td>
-						<td>
-							<!--<button onclick="takeSnapshot()" class="kirim" >Ambil Gambar</button>-->
-						</td>
+          <input type="radio" name="kegiatan" value="C" id="KegiatanC"/>
+          <label for="KegiatanC" data-tooltip="Rabu 8 Mei 2019 15:00 WIB Ruang C Gedung Z">Kegiatan C</label>
 
-					</tr>
-				</tr></tr></tr></small></td></tr></tbody>
-			</table>
-		</form>
-	</div>
-	<div id="frame">
-		<?php include 'cam-preview.html';?>	
-	</div>
+          <input type="radio" name="kegiatan" value="D" id="KegiatanD"/>
+          <label for="KegiatanD" data-tooltip="Rabu 8 Mei 2019 15:00 WIB Ruang C Gedung Z">Kegiatan D</label>
 
-	</body>
-	<script type="text/javascript">
-    var video = document.querySelector("#video-webcam");
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
-    if (navigator.getUserMedia) {
-        navigator.getUserMedia({ video: true }, handleVideo, videoError);
-    }
-    function handleVideo(stream) {
-        video.src = window.URL.createObjectURL(stream);
-        console.log(stream);
-    }
-    function videoError(e) {
-        alert("TAMU WAJIB AMBIL GAMBAR!")
-    }
-    function takeSnapshot() {
-        var img = document.createElement('img');
-        var context;
-        var width = video.offsetWidth
-                , height = video.offsetHeight;
-        canvas = document.createElement('canvas');
-        canvas.width = width;
-        canvas.height = height;
-        context = canvas.getContext('2d');
-        context.drawImage(video, 0, 0, width, height);
-        img.src = canvas.toDataURL('image/png');
-        document.body.appendChild(img);
-    }
-       var canvas = document.getElementById("myCanvas");
-            var ctx = canvas.getContext("2d");
-    function renderImage() {
-            var canvas = document.getElementById("myCanvas");
-            var ctx = canvas.getContext("2d");
+        </div>
+      <!--   </div> -->
+    </div>
 
-            // ambil gambar dari elemen <img>
-            var img = document.getElementById("scream");
+     <div class="row">
+      <h4>Data Diri</h4>
+      <div class="input-group input-group-icon">
+        <input type="text" name="nama" placeholder="Nama Lengkap"/>
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" name="email" placeholder="Email"/>
+        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="number" name="tel" placeholder="Nomor Telpon"/>
+        <div class="input-icon"><i class="fa fa-phone"></i></div>
+      </div>
+         <div class="input-group input-group-icon">
+        <input type="text" name="jab" placeholder="Jabatan Anda"/>
+        <div class="input-icon"><i class="fa fa-suitcase"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="text" name="satker" placeholder="Satuan Kerja"/>
+        <div class="input-icon"><i class="fa fa-bars"></i></div>
+      </div>
+       <h4>Jenis Kelamin</h4>
+      <div class="input-group">
+        <input type="radio" name="jk" value="laki" id="jenis-kelamin-laki" checked="true"/>
+        <label for="jenis-kelamin-laki"><span><i class="fa fa-mars"></i>Laki-Laki</span></label>
+        <input type="radio" name="jk" value="perempuan" id="jenis-kelamin-perempuan"/>
+        <label for="jenis-kelamin-perempuan"> <span><i class="fa fa-venus"></i>Perempuan</span></label>
+      </div>
+    </div>
 
-            // render ke Canvas
-            ctx.drawImage(img,10,10);
-        }
-</script>
+    <!-- CHECK UNTUK PERSYARATAN -->
+    <div class="row">
+      <h4>Komitmen</h4>
+      <div class="input-group">
+        <input type="checkbox" id="terms" required />
+        <label for="terms">Dengan ini saya bersedia untuk datang dan bertanggung jawab atas kehadiran saya.</label>
+      </div>
+    </div>
+    <!-- BUTTON KIRIM -->
+      <div class="row">
+      <button type="submit" class="btn btn--stripe btn--large" value="Submit" >Kirim</button>
+    </div>
+  </form>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
 </html>
