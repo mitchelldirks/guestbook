@@ -1,4 +1,4 @@
-# guestbook
+# Guestbook
 
 For SDPPI event pre-booking and entrance.
 
