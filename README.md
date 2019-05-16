@@ -1,11 +1,11 @@
 # Guestbook
 
 For SDPPI event pre-booking and entrance.
+<hr>
 
-
-HTML, CSS, JS, PHP
-Hosted link : <a href='#'>< unavailable ></a>
-Database : <a href='https://github.com/pottsed/guestbook/blob/master/guestbook.sql'>SQL Database</a>
+HTML, CSS, JS, PHP<br>
+Hosted link : <a href='#'>< unavailable ></a><br>
+Database : <a href='https://github.com/pottsed/guestbook/blob/master/guestbook.sql'>SQL Database</a><br>
 
 <hr>
 Credit: 
