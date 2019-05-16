@@ -9,8 +9,8 @@ Database : <a href='https://github.com/pottsed/guestbook/blob/master/guestbook.s
 <hr>
 Credit: 
 <ul>
-<li>Andras Toth, WebCodeCamJQuery 2.7.0 maker Git<a href='https://github.com/andrastoth/webcodecamjs'>hub.com/andrastoth/webcodecamjs</a></li>
-<li>Co. Creator & GUI maker, <a href='https://github.com/sugarin'>Sugarin</a></li>
+<li><strong>Andras Toth</strong>, WebCodeCamJQuery 2.7.0 maker Git<a href='https://github.com/andrastoth/webcodecamjs'>hub.com/andrastoth/webcodecamjs</a></li>
+<li><strong><a href='https://github.com/sugarin'>Sugarin</a></strong>, Co. Creator & GUI maker </li>
 </ul>
 
-Ask form <a href='https://mitchell.webku.cf/Project/Hacktiv8/DevC-FinalProject/contact.php'>Here</a>
+<strong>Ask? form <a href='https://mitchell.webku.cf/Project/Hacktiv8/DevC-FinalProject/contact.php'>Here</a></strong>
