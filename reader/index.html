@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Konfirmasi Absensi SDPPI</title>
+
+
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
     </head>
@@ -34,7 +36,7 @@
                             <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
                             <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
                         </div>
-                        <div class="well" style="width: 100%;">
+                        <!-- <div class="well" style="width: 100%;">
                             <label id="zoom-value" width="100">Zoom: 2</label>
                             <input id="zoom" onchange="Page.changeZoom();" type="range" min="10" max="30" value="20">
                             <label id="brightness-value" width="100">Brightness: 0</label>
@@ -52,7 +54,7 @@
                             <input id="flipVertical" onchange="Page.changeVertical();" type="checkbox">
                             <label id="flipHorizontal-value" width="100">Flip Horizontal: off</label>
                             <input id="flipHorizontal" onchange="Page.changeHorizontal();" type="checkbox">
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-md-6">
                         <div class="thumbnail" id="result">
@@ -62,6 +64,18 @@
                             <div class="caption">
                                 <h3>Scanned result</h3>
                                 <p id="scanned-QR"></p>
+                                <font color="red">*) Copy code above and continue<br></font>
+                                <form method="kb" action="../validate.php">  
+                                    <center>
+                                 
+                                     <input type="text" name="kb" align="center" placeholder="Booking code" autocomplete="off" /><br>
+                                    <!-- BUTTON KIRIM -->
+                                      <div class="row">
+                                       
+                                      <button type="submit" class="btn btn--stripe btn--large" value="Submit" >Kirim</button>
+                                      </div>
+                                       </center>
+                                  </form>
                             </div>
                         </div>
                     </div>
