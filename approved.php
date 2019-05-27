@@ -46,7 +46,7 @@
 	<h2>Your booking is now successful</h2>
 	<div class="input-group">
 	<input id="text" type="text" value="<?php //echo("https://mitchell.webku.cf/Project/guestbook/validate.php?kb="); 
-	echo ("localhost/form/validate.php?kb=");
+	//echo ("localhost/form/validate.php?kb=");
 	echo $kb; ?>" style="width:100%" hidden /><br>
 	<div id="qrcode"></div><br>
 	<h2>Code : <a href="#detail"><?php echo $kb; ?></a></h2><br>

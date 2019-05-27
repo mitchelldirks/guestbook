@@ -33,7 +33,7 @@
             <input type="text" placeholder="MM" value="<?php echo date('M')?>" readonly/>
           </div>
           <div class="col-third">
-            <input type="text" placeholder="YYYY"value="<?php echo date('Y')?>" readonly/>
+            <input type="text" placeholder="YYYY" value="<?php echo date('Y')?>" readonly/>
           </div>
         </div>
       </div>

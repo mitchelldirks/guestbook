@@ -6,9 +6,9 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
   if (isset($_GET['show'])) {
-   $sql = "SELECT * FROM guest where masuk like '". $_GET['show']."%' order by masuk desc";
+   $sql = "SELECT g.masuk,g.nama,g.booking,g.tel,g.email,g.jab,g.satker,v.img FROM guest g INNER JOIN valid v ON v.k_booking=g.booking where g.masuk like '". $_GET['show']."%' order by masuk desc";
  }else{
-   $sql="SELECT * FROM guest order by masuk desc";
+   $sql="SELECT g.masuk,g.nama,g.booking,g.tel,g.email,g.jab,g.satker,v.img FROM guest g INNER JOIN valid v ON v.k_booking=g.booking order by g.masuk desc";
  }
 ?>
 <!DOCTYPE html>
@@ -59,6 +59,7 @@ if($link === false){
           <th>E-mail</th>
           <th>Jabatan</th>
           <th>Satuan Kerja</th>
+          <th>Bukti Masuk</th>
       <!--<th>Sesi</th>
           <th>Bukti Check In</th> -->
         </tr>
@@ -82,6 +83,7 @@ if($link === false){
                       echo "<td>" . $row['email'] . "</td>";
                       echo "<td>" . $row['jab'] . "</td>";
                       echo "<td>" . $row['satker'] . "</td>";
+                      echo "<td><img src='img/guest/" . $row['img'] . "' width='150px' alt='" . $row['img'] . "'/></td>";
                       // echo "<td>" . $row['session'] . "</td>";
                       // echo "<td><img src='img/guest/" . $row['img'] . "' alt='".$row['img']."' width='120px' height='80px'></td>";
                   echo "</tr>";
