@@ -14,7 +14,7 @@ Database : <a href='https://github.com/pottsed/guestbook/blob/master/guestbook.s
 <strong>Credit: </strong>&nbsp;
 <ul>
 <li><strong>Andras Toth</strong>, WebCodeCamJQuery 2.7.0 maker Git<a href='https://github.com/andrastoth/webcodecamjs'>hub.com/andrastoth/webcodecamjs</a></li>
-<li><strong>Sugarin</strong>, Co. Creator & GUI maker. Git<a href='https://github.com/sugarin'>hub.com/sugarin</a></li>
+<li><strong>Sugarin</strong>, Co. Creator & UI maker. Git<a href='https://github.com/sugarin'>hub.com/sugarin</a></li>
 </ul>
 
 <strong>Kritik atau saran? Isi form contact <a href='https://mitchell.webku.cf/Project/Hacktiv8/DevC-FinalProject/contact.php'>Berikut</a></strong>
