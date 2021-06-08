@@ -50,6 +50,7 @@
                     fadeIn(el, 0.5);
                 }, 300);
             });
+            console.log(res.code)
             scannedImg.src = res.imgData;
             scannedQR[txt] = res.format + ": " + res.code;
         },
